@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -50,7 +51,6 @@
     <Folder Include="Logics\" />
     <Folder Include="Repositories\" />
     <Folder Include="StaticValues\" />
-    <Folder Include="ValueObjects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
