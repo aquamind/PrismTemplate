@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories.cs" />
+    <Compile Include="InMemory\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServer\SqlConnectionFactory.cs" />
     <Compile Include="SqlServer\Query.cs" />
+    <Compile Include="SqlServer\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
@@ -57,9 +59,7 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fake\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
