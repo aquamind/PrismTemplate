@@ -12,5 +12,8 @@ namespace Domain.Exceptions
             Warning,
             Information,
         }
+
+        protected ExceptionBase(string message) : base(message) { }
+        protected ExceptionBase(string message, Exception innerException) : base(message, innerException) { }
     }
 }
