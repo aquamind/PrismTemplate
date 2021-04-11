@@ -6,7 +6,7 @@ using Infrastructure.Sql;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Infrastructure.SqlServer
+namespace Infrastructure.Sqlite
 {
     public sealed class UserRepository : IUserRepository
     {

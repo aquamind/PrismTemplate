@@ -1,12 +1,14 @@
-﻿using System.Data.SqlClient;
+﻿using Infrastructure.Sql;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace Infrastructure.SqlServer
 {
-    internal static class SqlConnectionFactory
+    internal class ConnectionFactory : IConnectionFactory
     {
         private static readonly string connectionString;
 
-        static SqlConnectionFactory()
+        static ConnectionFactory()
         {
             var builder = new SqlConnectionStringBuilder()
             {
@@ -19,7 +21,17 @@ namespace Infrastructure.SqlServer
             connectionString = builder.ToString();
         }
 
-        internal static SqlConnection GetSqlConnection()
+        public DbCommand GetCommand(string sql)
+        {
+            return new SqlCommand(sql);
+        }
+
+        public DbParameter GetParameter(string name, object value)
+        {
+            return new SqlParameter(name, value);
+        }
+
+        public DbConnection GetConnection()
         {
             return new SqlConnection(connectionString);
         }
