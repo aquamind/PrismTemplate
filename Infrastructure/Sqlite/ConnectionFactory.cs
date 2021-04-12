@@ -42,9 +42,9 @@ namespace Infrastructure.Sqlite
             return new SQLiteConnection(GetConnectionString()); ;
         }
 
-        public DbCommand GetCommand(string sql)
+        public DbCommand GetCommand()
         {
-            return new SQLiteCommand(sql) ;
+            return new SQLiteCommand() ;
         }
 
         public DbParameter GetParameter(string name, object value)

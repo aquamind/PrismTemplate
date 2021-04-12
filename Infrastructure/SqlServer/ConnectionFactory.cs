@@ -21,9 +21,9 @@ namespace Infrastructure.SqlServer
             connectionString = builder.ToString();
         }
 
-        public DbCommand GetCommand(string sql)
+        public DbCommand GetCommand()
         {
-            return new SqlCommand(sql);
+            return new SqlCommand();
         }
 
         public DbParameter GetParameter(string name, object value)

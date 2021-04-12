@@ -30,10 +30,11 @@ namespace Infrastructure.Sql
         internal void GetDataReader(Action<DbDataReader> action)
         {
             using (var connection = connectionFactory.GetConnection())
-            using (var command = connectionFactory.GetCommand(sql))
+            using (var command = connectionFactory.GetCommand())
             {
                 connection.Open();
                 command.Connection = connection;
+                command.CommandText = sql;
                 command.Parameters.AddRange(parameters.ToArray());
                 using (var reader = command.ExecuteReader())
                 {
